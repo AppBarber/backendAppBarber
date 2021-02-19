@@ -1,6 +1,5 @@
 import { Router } from 'express';
 import { startOfHour, parseISO } from 'date-fns';
-import Appointment from '../models/Appointment';
 import AppointmentsRepository from '../repositories/AppointmentsRepository';
 // parseIso converte uma string em date nativo do javascript
 // startOfHour recupera uma data com o inicio de uma determinada hora
@@ -30,7 +29,10 @@ appointmentsRouter.post('/', (request, response) => {
       .json({ message: 'This appointment is already booked' });
   }
 
-  const appointment = appointmentsRepository.create(provider, parsedDate);
+  const appointment = appointmentsRepository.create({
+    provider,
+    date: parsedDate,
+  });
 
   return response.json(appointment);
 });
