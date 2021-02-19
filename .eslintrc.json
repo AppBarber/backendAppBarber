@@ -31,6 +31,9 @@
         }
       ],
       "camelcase": "off",
+      "@typescript-eslint/no-unsed-vars": ["error", {
+        "argsIgnorePattern": "_"
+      }],
       "prettier/prettier": "error",
       "class-methods-use-this": "off"
     },
