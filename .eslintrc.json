@@ -19,7 +19,7 @@
         "prettier"
     ],
     "rules": {
-      "no-use-before-define": "off",
+
       "@typescript-eslint/no-use-before-define": [
         "error"
       ],
@@ -35,7 +35,16 @@
         "argsIgnorePattern": "_"
       }],
       "prettier/prettier": "error",
-      "class-methods-use-this": "off"
+      "class-methods-use-this": "off",
+      "@typescript-eslint/naming-convention": [
+        "error",
+        {
+          "selector": "interface",
+          "prefix": ["I"],
+          "format": ["PascalCase"]
+        }
+      ],
+      "no-useless-constructor": "off"
     },
     "settings": {
       "import/resolver": {
