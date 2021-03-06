@@ -29,7 +29,7 @@ app.use(
   },
 );
 
-app.use('/files', express.static(uploadConfig.directory));
+app.use('/files', express.static(uploadConfig.uploadsFolder));
 
 app.get('/', (request, response) => {
   return response.json({ message: 'Hello World' });
