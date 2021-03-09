@@ -40,7 +40,7 @@ app.use(
 );
 
 app.get('/', (request, response) => {
-  return response.send('Bem vindo a Api GoBarber');
+  return response.send('Bem vindo a Api GoBarber :)');
 });
 
 app.listen(3333, () => {
