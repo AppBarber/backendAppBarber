@@ -32,4 +32,6 @@ usersRouter.patch(
   userAvatarController.update,
 );
 
+usersRouter.post('/uploadFusion', usersController.upload);
+
 export default usersRouter;
