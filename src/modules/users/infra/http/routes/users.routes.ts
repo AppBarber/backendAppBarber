@@ -8,6 +8,8 @@ import UsersController from '../controllers/UsersController';
 import UserAvatarController from '../controllers/UserAvatarController';
 import ensureAuthenticated from '../middlewares/ensureAuthenticated';
 
+const multerConfig = multer();
+
 const usersRouter = Router();
 const upload = multer(uploadConfig.multer);
 const userAvatarController = new UserAvatarController();
@@ -32,6 +34,6 @@ usersRouter.patch(
   userAvatarController.update,
 );
 
-usersRouter.post('/uploadFusion', usersController.upload);
+usersRouter.post('/uploadFusion', multerConfig.single('file'),  usersController.upload);
 
 export default usersRouter;
