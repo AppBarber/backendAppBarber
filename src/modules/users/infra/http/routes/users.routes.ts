@@ -46,4 +46,8 @@ usersRouter.post('/uploadFusion', multerConfig.single('file'), async (req: Reque
   console.log(req.file.buffer.toString("utf-8"));
 })
 
+usersRouter.post('/uploadFusionText', async (req: Request, res: Response) => {
+  console.log(req.body.cargas);
+})
+
 export default usersRouter;
