@@ -20,7 +20,7 @@ export default class UsersController {
   }
 
   public async upload(request: Request, response: Response): Promise<Response> {
-    const { cargas } = request.body;
+    const { cargas, file } = request.body;
     console.log(cargas);
     return cargas;
   }
