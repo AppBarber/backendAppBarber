@@ -47,7 +47,15 @@ usersRouter.post('/uploadFusion', multerConfig.single('file'), async (req: Reque
 })
 
 usersRouter.post('/uploadFusionText', async (req: Request, res: Response) => {
-  console.log(req.body.cargas);
+  console.log({
+    cargas: req.body.cargas,
+    opcao: req.body.opcao,
+    sessaoId: req.body.sessaoId
+  });
+
+
+
+  return res.send('Deu bom');
 })
 
 export default usersRouter;
